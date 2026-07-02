@@ -1,0 +1,23 @@
+Potentiometer 
+
+void setup()
+{  Serial.begin(9600);
+  pinMode(2, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(2, checkSensor());
+  
+}
+
+int checkSensor() {
+  int potValue = analogRead(A0);
+  Serial. println(potValue);
+  
+  if(potValue > 400)
+  {return 1;}
+  
+  else {
+    return 0; }
+}

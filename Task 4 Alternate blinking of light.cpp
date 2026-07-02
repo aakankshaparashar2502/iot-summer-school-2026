@@ -1,0 +1,55 @@
+Task 4 Alternate blinking of light 
+
+int count = 0;
+void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4,OUTPUT);
+  pinMode(5,OUTPUT);
+  pinMode(6,OUTPUT);
+}
+
+void loop()
+{
+  int val = digitalRead(2);
+  if(val == 0)  
+  {
+    
+    count = count + 1;
+    
+  }
+  
+  switch(count)
+  {
+    case 1: digitalWrite(3,HIGH);
+    
+         break;
+    
+    case 2: digitalWrite(4, HIGH);
+          
+          break;
+    
+    case 3: digitalWrite(5, HIGH);
+    
+           break;
+    
+    
+    case 4: digitalWrite(6, HIGH);
+    
+             break;
+    
+    default:
+    
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    
+    count = 0;
+  }
+  
+  delay(200);
+  
+}
+     
